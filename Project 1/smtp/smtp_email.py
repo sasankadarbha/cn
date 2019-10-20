@@ -28,8 +28,8 @@ if recv1[:3] != '250':
     print('250 reply not received from server.')
 
 #Info for username and password
-username = "sasanka.msd97@gmail.com"
-password = "Sasanka1997"
+username = "someone@example.com" #your email here
+password = "**********" #your password here
 base64_str = ("\x00"+username+"\x00"+password).encode()
 base64_str = base64.b64encode(base64_str)
 authMsg = "AUTH PLAIN ".encode()+base64_str+"\r\n".encode()
@@ -37,12 +37,12 @@ clientSocketSSL.send(authMsg)
 recv_auth = clientSocketSSL.recv(1024)
 print(recv_auth.decode())
 
-mailFrom = "MAIL FROM:<sasanka.msd97@gmail.com>\r\n"
+mailFrom = "MAIL FROM:<someone@example.com>\r\n" #your email here
 clientSocketSSL.send(mailFrom.encode())
 recv2 = clientSocketSSL.recv(1024)
 recv2 = recv2.decode()
 print("After MAIL FROM command: "+recv2)
-rcptTo = "RCPT TO:<sasanka.msd97@gmail.com>\r\n"
+rcptTo = "RCPT TO:<anyone@example.com>\r\n" #receivers email here
 clientSocketSSL.send(rcptTo.encode())
 recv3 = clientSocketSSL.recv(1024)
 recv3 = recv3.decode()

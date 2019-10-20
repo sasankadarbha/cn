@@ -1,0 +1,4 @@
+The python file contains the code for sending a mail to a client using standard smtp.
+This doesn't use smtp library in python3.
+Edit email and password in the py file.
+For this to work, you have to disable 2-step verification and enable "less secure app access" in your google account settings.
